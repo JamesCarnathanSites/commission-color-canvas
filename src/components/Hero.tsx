@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { PaintBrush, Sparkles, ArrowDown } from 'lucide-react';
+import { Paintbrush, Sparkles, ArrowDown } from 'lucide-react';
 
 const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -62,7 +62,7 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-on-scroll opacity-0 delay-500">
             <button className="btn-primary flex items-center">
-              <PaintBrush size={18} className="mr-2" />
+              <Paintbrush size={18} className="mr-2" />
               See My Work
             </button>
             <button className="btn-outline">

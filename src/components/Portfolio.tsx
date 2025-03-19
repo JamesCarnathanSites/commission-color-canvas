@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Maximize2, X, Paw } from 'lucide-react';
+import { Maximize2, X, Heart } from 'lucide-react';
 
 // Sample portfolio items with furry art
 const portfolioItems = [
@@ -72,7 +72,7 @@ const Portfolio = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-4">
-            <Paw size={32} className="text-pink" />
+            <Heart size={32} className="text-pink" />
           </div>
           <h2 className="section-title">My Furry Gallery</h2>
           <p className="section-subtitle">Check out my fluffiest and most colorful creations!</p>

@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Paintbrush, Sparkles, ArrowDown, Paw } from 'lucide-react';
+import { Paintbrush, Sparkles, ArrowDown, Heart } from 'lucide-react';
 
 const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -43,7 +43,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center min-h-screen">
         <div className="text-center relative z-10">
           <span className="inline-flex items-center px-3 py-1 rounded-full bg-pink/10 text-pink mb-6 animate-on-scroll opacity-0">
-            <Paw size={16} className="mr-2" />
+            <Heart size={16} className="mr-2" />
             <span className="text-sm font-medium">Furry Art Commissions</span>
           </span>
           

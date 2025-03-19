@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X, PawPrint } from 'lucide-react';
+import { Menu, X, Heart } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,7 +42,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <a href="#" className="text-2xl font-serif font-bold text-grey-dark mr-8 flex items-center">
-            <PawPrint size={24} className="text-pink mr-2" />
+            <Heart size={24} className="text-pink mr-2" />
             <span className="text-pink">Collie</span><span className="text-green">'s</span> Art
           </a>
         </div>

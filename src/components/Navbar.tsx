@@ -41,7 +41,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#" className="text-2xl font-serif font-bold text-grey-dark mr-8 flex items-center">
+          <a href="#" className="text-2xl font-serif font-bold text-pink mr-8 flex items-center">
             <Heart size={24} className="text-pink mr-2" />
             <span className="text-pink">Collie</span><span className="text-green">'s</span> Art
           </a>
@@ -49,16 +49,16 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a onClick={() => scrollToSection('home')} className="nav-link cursor-pointer">Home</a>
-          <a onClick={() => scrollToSection('portfolio')} className="nav-link cursor-pointer">Gallery</a>
-          <a onClick={() => scrollToSection('about')} className="nav-link cursor-pointer">About Me</a>
-          <a onClick={() => scrollToSection('commissions')} className="nav-link cursor-pointer">Commissions</a>
+          <a onClick={() => scrollToSection('home')} className="text-green hover:text-pink transition-colors cursor-pointer">Home</a>
+          <a onClick={() => scrollToSection('portfolio')} className="text-green hover:text-pink transition-colors cursor-pointer">Art</a>
+          <a onClick={() => scrollToSection('about')} className="text-green hover:text-pink transition-colors cursor-pointer">About</a>
+          <a onClick={() => scrollToSection('commissions')} className="text-green hover:text-pink transition-colors cursor-pointer">Commissions</a>
           <a onClick={() => scrollToSection('contact')} className="btn-primary cursor-pointer">Boop Me!</a>
         </nav>
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-grey-dark hover:text-pink transition-colors" 
+          className="md:hidden text-green hover:text-pink transition-colors" 
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
@@ -69,15 +69,15 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div 
         className={cn(
-          "fixed inset-0 pt-20 bg-white/95 backdrop-blur-lg z-40 flex flex-col items-center transform transition-transform duration-300 ease-in-out",
+          "fixed inset-0 pt-20 bg-pink-light/95 backdrop-blur-lg z-40 flex flex-col items-center transform transition-transform duration-300 ease-in-out",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
         <nav className="flex flex-col items-center space-y-6 p-8 text-lg">
-          <a onClick={() => scrollToSection('home')} className="nav-link cursor-pointer">Home</a>
-          <a onClick={() => scrollToSection('portfolio')} className="nav-link cursor-pointer">Gallery</a>
-          <a onClick={() => scrollToSection('about')} className="nav-link cursor-pointer">About Me</a>
-          <a onClick={() => scrollToSection('commissions')} className="nav-link cursor-pointer">Commissions</a>
+          <a onClick={() => scrollToSection('home')} className="text-green cursor-pointer">Home</a>
+          <a onClick={() => scrollToSection('portfolio')} className="text-green cursor-pointer">Art</a>
+          <a onClick={() => scrollToSection('about')} className="text-green cursor-pointer">About</a>
+          <a onClick={() => scrollToSection('commissions')} className="text-green cursor-pointer">Commissions</a>
           <a onClick={() => scrollToSection('contact')} className="btn-primary cursor-pointer mt-4">Boop Me!</a>
         </nav>
       </div>

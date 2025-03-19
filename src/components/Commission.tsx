@@ -1,44 +1,47 @@
 
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Check, ChevronDown, AlertCircle } from 'lucide-react';
+import { Check, ChevronDown, AlertCircle, PawPrint, Cat, Dog, Rabbit } from 'lucide-react';
 
 const commissionTypes = [
   {
-    title: "Character Design",
-    price: "Starting at $50",
-    description: "Custom character designs in full color with simple background. Great for OCs and fan art.",
+    title: "Chibi Art",
+    price: "Starting at $25",
+    description: "Super cute, bouncy chibi versions of your fursona or OC. Perfect for icons and stickers!",
     details: [
-      "High-resolution digital artwork",
-      "Character design sheet",
-      "2 minor revisions included",
-      "Commercial use rights not included"
+      "Adorable simplified style",
+      "Solid or simple background",
+      "Digital file in high resolution",
+      "2 minor revisions included"
     ],
-    popular: false
+    popular: false,
+    icon: <Cat size={20} />
   },
   {
-    title: "Portrait",
-    price: "Starting at $75",
-    description: "Detailed character portraits with atmospheric background and lighting effects.",
+    title: "Full Character",
+    price: "Starting at $45",
+    description: "Fully rendered character art with your choice of pose, expression, and simple background.",
     details: [
-      "High-resolution digital artwork",
-      "Complex lighting and effects",
-      "3 minor revisions included",
-      "Commercial use rights available"
+      "Detailed character rendering",
+      "Custom pose and expression",
+      "Simple color background",
+      "3 minor revisions included"
     ],
-    popular: true
+    popular: true,
+    icon: <Dog size={20} />
   },
   {
-    title: "Full Illustration",
-    price: "Starting at $150",
-    description: "Fully rendered scene with characters, detailed background, and special effects.",
+    title: "Reference Sheet",
+    price: "Starting at $80",
+    description: "Complete character reference with multiple views, color notes, and personality details.",
     details: [
-      "High-resolution digital artwork",
-      "Multiple characters available",
-      "Detailed environment and effects",
-      "Commercial use rights available"
+      "Front, back, and side views",
+      "Color swatches and markings",
+      "Expressions chart",
+      "Personal details section"
     ],
-    popular: false
+    popular: false,
+    icon: <Rabbit size={20} />
   }
 ];
 
@@ -51,24 +54,24 @@ const Commission = () => {
 
   const faqs = [
     {
-      question: "What is your commission process?",
-      answer: "My commission process involves an initial consultation, sketch approval, color and shading approval, and final delivery. I keep you involved at every step to ensure the final artwork meets your expectations."
+      question: "How do I commission you?",
+      answer: "Just boop me through the contact form! Let me know what kind of art you're looking for, details about your character, and any references you have. I'll get back to you super quick to discuss details!"
     },
     {
-      question: "How long does a commission take?",
-      answer: "Turnaround time varies based on complexity and my current workload. Character designs typically take 1-2 weeks, while full illustrations may take 2-4 weeks. I always provide estimated timeframes before starting."
+      question: "How long will my commission take?",
+      answer: "Chibis usually take 3-5 days, full characters 1-2 weeks, and reference sheets 2-3 weeks. These times can vary depending on my current queue and complexity of the design."
     },
     {
       question: "What file formats do you provide?",
-      answer: "All commissions include high-resolution JPG and PNG files. For an additional fee, I can provide PSD files with layers or other formats upon request."
+      answer: "All commissions include high-resolution PNG files. For reference sheets, I also provide a PDF version. If you need other formats, just let me know!"
     },
     {
-      question: "Do you offer commercial use rights?",
-      answer: "Basic commissions include personal use only. Commercial rights are available for an additional fee, with pricing depending on the intended use and distribution scale."
+      question: "Do I need to pay upfront?",
+      answer: "For new clients, I ask for a 50% deposit before starting work, with the remaining payment due upon completion. Regular clients may have different arrangements."
     },
     {
       question: "What payment methods do you accept?",
-      answer: "I accept payments through PayPal, Venmo, and bank transfers. For most commissions, I require a 50% non-refundable deposit to begin work, with the remaining balance due upon completion."
+      answer: "I accept PayPal, Venmo, and Ko-fi for payments. I can also work with other platforms if needed - just ask!"
     }
   ];
 
@@ -79,8 +82,11 @@ const Commission = () => {
       
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="section-title">Commission Information</h2>
-          <p className="section-subtitle">Pricing and details for custom artwork</p>
+          <div className="flex justify-center mb-4">
+            <PawPrint size={32} className="text-pink" />
+          </div>
+          <h2 className="section-title">Commissions</h2>
+          <p className="section-subtitle">Let's bring your furry friends to life!</p>
         </div>
         
         {/* Commission Types */}
@@ -102,6 +108,9 @@ const Commission = () => {
               )}
               
               <div className="p-6 bg-white">
+                <div className="w-10 h-10 rounded-full bg-green/20 flex items-center justify-center mb-4 text-green">
+                  {commission.icon}
+                </div>
                 <h3 className="text-xl font-medium text-grey-dark mb-2">{commission.title}</h3>
                 <p className="text-2xl font-serif text-pink mb-4">{commission.price}</p>
                 <p className="text-grey mb-6">{commission.description}</p>
@@ -123,7 +132,7 @@ const Commission = () => {
                     ? "bg-pink text-white hover:bg-pink-dark" 
                     : "bg-grey-light text-grey-dark hover:bg-pink/10"
                 )}>
-                  Request Commission
+                  Boop to Commission
                 </button>
               </div>
             </div>
@@ -137,26 +146,26 @@ const Commission = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="glass rounded-xl p-6 relative">
               <div className="w-10 h-10 rounded-full bg-pink flex items-center justify-center text-white font-medium absolute -top-4 left-6">1</div>
-              <h4 className="text-lg font-medium text-grey-dark mb-2 mt-4">Initial Consultation</h4>
-              <p className="text-grey">Discuss your ideas, requirements, and vision for the artwork</p>
+              <h4 className="text-lg font-medium text-grey-dark mb-2 mt-4">Chat & Plan</h4>
+              <p className="text-grey">We'll discuss your floofy friend and all the details you want to include</p>
             </div>
             
             <div className="glass rounded-xl p-6 relative">
               <div className="w-10 h-10 rounded-full bg-pink flex items-center justify-center text-white font-medium absolute -top-4 left-6">2</div>
-              <h4 className="text-lg font-medium text-grey-dark mb-2 mt-4">Sketching Phase</h4>
-              <p className="text-grey">Review and approve initial sketches and composition</p>
+              <h4 className="text-lg font-medium text-grey-dark mb-2 mt-4">Sketchy Time</h4>
+              <p className="text-grey">I'll create sketches for you to review and give feedback on</p>
             </div>
             
             <div className="glass rounded-xl p-6 relative">
               <div className="w-10 h-10 rounded-full bg-pink flex items-center justify-center text-white font-medium absolute -top-4 left-6">3</div>
-              <h4 className="text-lg font-medium text-grey-dark mb-2 mt-4">Coloring & Details</h4>
-              <p className="text-grey">Add colors, shading, and fine details to bring the art to life</p>
+              <h4 className="text-lg font-medium text-grey-dark mb-2 mt-4">Color Magic</h4>
+              <p className="text-grey">Adding all the colors, fluff, and details to bring your character to life</p>
             </div>
             
             <div className="glass rounded-xl p-6 relative">
               <div className="w-10 h-10 rounded-full bg-pink flex items-center justify-center text-white font-medium absolute -top-4 left-6">4</div>
-              <h4 className="text-lg font-medium text-grey-dark mb-2 mt-4">Final Delivery</h4>
-              <p className="text-grey">Receive high-resolution files ready for your intended use</p>
+              <h4 className="text-lg font-medium text-grey-dark mb-2 mt-4">Art Delivery</h4>
+              <p className="text-grey">Your new art arrives, ready to show off to all your friends!</p>
             </div>
           </div>
         </div>
@@ -200,12 +209,12 @@ const Commission = () => {
         <div className="mt-16 p-6 rounded-xl bg-green-light/50 border border-green flex items-start">
           <AlertCircle size={24} className="text-green-dark flex-shrink-0 mt-0.5 mr-4" />
           <div>
-            <h4 className="text-lg font-medium text-grey-dark mb-1">Ready to Commission?</h4>
+            <h4 className="text-lg font-medium text-grey-dark mb-1">Ready for some art?</h4>
             <p className="text-grey-dark mb-2">
-              Please note that I have limited commission slots available each month. Contact me to check availability and discuss your project.
+              My commission slots fill up fast, so boop me soon to reserve your spot! I can't wait to draw your fluffy characters!
             </p>
             <a href="#contact" className="text-pink font-medium hover:underline inline-block">
-              Contact me now →
+              Boop me now! →
             </a>
           </div>
         </div>

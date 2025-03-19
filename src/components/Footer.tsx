@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Heart, Mail, Instagram, Twitter, ChevronUp } from 'lucide-react';
+import { Heart, Mail, Instagram, Twitter, ChevronUp, PawPrint } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -15,12 +15,13 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-2">
-            <a href="#" className="text-2xl font-serif font-bold mb-4 block">
-              <span className="text-pink">Art</span>Folio
+            <a href="#" className="text-2xl font-serif font-bold mb-4 block flex items-center">
+              <PawPrint size={20} className="text-pink mr-2" />
+              <span className="text-pink">Collie</span><span className="text-green">'s</span> Art
             </a>
             <p className="text-grey-light mb-6 max-w-md">
-              Custom artwork that brings your imagination to life. Specializing in character design, 
-              portraits, and fantasy illustrations for personal and commercial use.
+              Creating pawsome art that brings your fursonas to life! From chibi art to 
+              detailed ref sheets - your characters deserve to be as cute and fluffy as you imagine them.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -38,7 +39,7 @@ const Footer = () => {
                 <Twitter size={18} />
               </a>
               <a 
-                href="mailto:contact@artfolio.com" 
+                href="mailto:collie@furryart.com" 
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center transition-colors hover:bg-pink"
                 aria-label="Email"
               >
@@ -54,10 +55,10 @@ const Footer = () => {
                 <a href="#home" className="text-grey-light hover:text-pink transition-colors">Home</a>
               </li>
               <li>
-                <a href="#portfolio" className="text-grey-light hover:text-pink transition-colors">Portfolio</a>
+                <a href="#portfolio" className="text-grey-light hover:text-pink transition-colors">Gallery</a>
               </li>
               <li>
-                <a href="#about" className="text-grey-light hover:text-pink transition-colors">About</a>
+                <a href="#about" className="text-grey-light hover:text-pink transition-colors">About Me</a>
               </li>
               <li>
                 <a href="#commissions" className="text-grey-light hover:text-pink transition-colors">Commissions</a>
@@ -69,22 +70,22 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-medium mb-4">Services</h4>
+            <h4 className="text-lg font-medium mb-4">Art Types</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#commissions" className="text-grey-light hover:text-pink transition-colors">Character Design</a>
+                <a href="#commissions" className="text-grey-light hover:text-pink transition-colors">Character Refs</a>
               </li>
               <li>
-                <a href="#commissions" className="text-grey-light hover:text-pink transition-colors">Portrait Art</a>
+                <a href="#commissions" className="text-grey-light hover:text-pink transition-colors">Chibi Art</a>
               </li>
               <li>
                 <a href="#commissions" className="text-grey-light hover:text-pink transition-colors">Full Illustrations</a>
               </li>
               <li>
-                <a href="#commissions" className="text-grey-light hover:text-pink transition-colors">Concept Art</a>
+                <a href="#commissions" className="text-grey-light hover:text-pink transition-colors">Emotes</a>
               </li>
               <li>
-                <a href="#commissions" className="text-grey-light hover:text-pink transition-colors">Custom Commissions</a>
+                <a href="#commissions" className="text-grey-light hover:text-pink transition-colors">Custom Stickers</a>
               </li>
             </ul>
           </div>
@@ -94,12 +95,12 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-grey-light text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} ArtFolio. All rights reserved.
+            © {new Date().getFullYear()} Collie's Art. All rights reserved.
           </p>
           
           <div className="flex items-center text-grey-light text-sm">
             <span className="flex items-center">
-              Made with <Heart size={14} className="mx-1 text-pink" /> for art lovers
+              Made with <Heart size={14} className="mx-1 text-pink" /> for floofy friends
             </span>
           </div>
         </div>

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, PawPrint } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,18 +41,19 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#" className="text-2xl font-serif font-bold text-grey-dark mr-8">
-            <span className="text-pink">Art</span>Folio
+          <a href="#" className="text-2xl font-serif font-bold text-grey-dark mr-8 flex items-center">
+            <PawPrint size={24} className="text-pink mr-2" />
+            <span className="text-pink">Collie</span><span className="text-green">'s</span> Art
           </a>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <a onClick={() => scrollToSection('home')} className="nav-link cursor-pointer">Home</a>
-          <a onClick={() => scrollToSection('portfolio')} className="nav-link cursor-pointer">Portfolio</a>
-          <a onClick={() => scrollToSection('about')} className="nav-link cursor-pointer">About</a>
+          <a onClick={() => scrollToSection('portfolio')} className="nav-link cursor-pointer">Gallery</a>
+          <a onClick={() => scrollToSection('about')} className="nav-link cursor-pointer">About Me</a>
           <a onClick={() => scrollToSection('commissions')} className="nav-link cursor-pointer">Commissions</a>
-          <a onClick={() => scrollToSection('contact')} className="btn-primary cursor-pointer">Contact Me</a>
+          <a onClick={() => scrollToSection('contact')} className="btn-primary cursor-pointer">Boop Me!</a>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -74,10 +75,10 @@ const Navbar = () => {
       >
         <nav className="flex flex-col items-center space-y-6 p-8 text-lg">
           <a onClick={() => scrollToSection('home')} className="nav-link cursor-pointer">Home</a>
-          <a onClick={() => scrollToSection('portfolio')} className="nav-link cursor-pointer">Portfolio</a>
-          <a onClick={() => scrollToSection('about')} className="nav-link cursor-pointer">About</a>
+          <a onClick={() => scrollToSection('portfolio')} className="nav-link cursor-pointer">Gallery</a>
+          <a onClick={() => scrollToSection('about')} className="nav-link cursor-pointer">About Me</a>
           <a onClick={() => scrollToSection('commissions')} className="nav-link cursor-pointer">Commissions</a>
-          <a onClick={() => scrollToSection('contact')} className="btn-primary cursor-pointer mt-4">Contact Me</a>
+          <a onClick={() => scrollToSection('contact')} className="btn-primary cursor-pointer mt-4">Boop Me!</a>
         </nav>
       </div>
     </header>

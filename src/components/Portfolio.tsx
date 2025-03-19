@@ -1,49 +1,49 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Maximize2, X } from 'lucide-react';
+import { Maximize2, X, Paw } from 'lucide-react';
 
-// Sample portfolio items, in a real app these would come from a database or API
+// Sample portfolio items with furry art
 const portfolioItems = [
   {
     id: 1,
-    title: "Fantasy Character",
+    title: "Fox Warrior",
     category: "character",
-    img: "https://images.unsplash.com/photo-1618331835717-801e976710b2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGZhbnRhc3klMjBhcnR8ZW58MHx8MHx8fDA%3D"
+    img: "https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Zm94fGVufDB8fDB8fHww"
   },
   {
     id: 2,
-    title: "Enchanted Forest",
-    category: "landscape",
-    img: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZW5jaGFudGVkJTIwZm9yZXN0fGVufDB8fDB8fHww"
+    title: "Magical Forest Friends",
+    category: "scene",
+    img: "https://images.unsplash.com/photo-1516934024742-b461fba47600?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHdvbGZ8ZW58MHx8MHx8fDA%3D"
   },
   {
     id: 3,
-    title: "Portrait Study",
+    title: "Wolf Portrait",
     category: "portrait",
-    img: "https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZGlnaXRhbCUyMHBvcnRyYWl0fGVufDB8fDB8fHww"
+    img: "https://images.unsplash.com/photo-1588167056547-c183313da47c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d29sZnxlbnwwfHwwfHx8MA%3D%3D"
   },
   {
     id: 4,
-    title: "Sci-Fi Concept",
+    title: "Space Cat",
     category: "concept",
-    img: "https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNjaSUyMGZpJTIwYXJ0fGVufDB8fDB8fHww"
+    img: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0fGVufDB8fDB8fHww"
   },
   {
     id: 5,
-    title: "Animal Companion",
+    title: "Bunny Adventurer",
     category: "character",
-    img: "https://images.unsplash.com/photo-1560073744-7643b964bdf8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZmFudGFzeSUyMGFuaW1hbHxlbnwwfHwwfHx8MA%3D%3D"
+    img: "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFiYml0fGVufDB8fDB8fHww"
   },
   {
     id: 6,
-    title: "Fantasy Map",
+    title: "Dragon Friend",
     category: "concept",
-    img: "https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZmFudGFzeSUyMG1hcHxlbnwwfHwwfHx8MA%3D%3D"
+    img: "https://images.unsplash.com/photo-1577493340887-b7bfff550145?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZHJhZ29ufGVufDB8fDB8fHww"
   }
 ];
 
-const categories = ["all", "character", "landscape", "portrait", "concept"];
+const categories = ["all", "character", "portrait", "scene", "concept"];
 
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -71,8 +71,11 @@ const Portfolio = () => {
       
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="section-title">My Portfolio</h2>
-          <p className="section-subtitle">A showcase of my recent artwork and commissions</p>
+          <div className="flex justify-center mb-4">
+            <Paw size={32} className="text-pink" />
+          </div>
+          <h2 className="section-title">My Furry Gallery</h2>
+          <p className="section-subtitle">Check out my fluffiest and most colorful creations!</p>
           
           {/* Filter Categories */}
           <div className="flex flex-wrap justify-center gap-2 mt-8">
